@@ -5,6 +5,10 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const goalRoutes = require("./routes/goalRoutes");
+const roomRoutes = require("./routes/roomRoutes");
+const sessionRoutes = require("./routes/sessionRoutes");
+const checkinRoutes = require("./routes/checkinRoutes");
+const analyticsRoutes = require("./routes/analyticsRoutes");
 
 dotenv.config();
 
@@ -26,6 +30,18 @@ app.use("/api/auth", authRoutes);
 
 // Goal routes
 app.use("/api/goals", goalRoutes);
+
+//Room routes
+app.use("/api/rooms", roomRoutes);
+
+//Session routes
+app.use("/api/sessions", sessionRoutes);
+
+//Checkin routes
+app.use("/api/checkins", checkinRoutes);
+
+//Analytic routes
+app.use("/api/analytics", analyticsRoutes);
 
 const PORT = process.env.PORT || 5001;
 
